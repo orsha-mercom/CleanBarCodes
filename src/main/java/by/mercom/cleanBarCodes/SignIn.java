@@ -48,6 +48,7 @@ public class SignIn extends JDialog {
             Main.sendErrMSG("Невозможно подключиться к БД!");
             return;
         }
+        SQL.setConnParam(tfIPAddress.getValue().toString(), tfLogin.getText(), String.valueOf(tfPass.getPassword()));
         dispose();
         new GUI();
     }

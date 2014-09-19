@@ -62,6 +62,7 @@
           </grid>
         </constraints>
         <properties>
+          <editable value="false"/>
           <text value="0"/>
         </properties>
       </component>

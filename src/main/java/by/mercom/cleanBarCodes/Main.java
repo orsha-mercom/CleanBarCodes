@@ -30,4 +30,8 @@ public class Main {
         JOptionPane.showMessageDialog(null, msg, "Ошибка!", JOptionPane.ERROR_MESSAGE);
     }
 
+    public static void sendInfoMSG(String msg) {
+        JOptionPane.showMessageDialog(null, msg, "Информация!", JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }

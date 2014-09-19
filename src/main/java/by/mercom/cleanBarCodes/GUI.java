@@ -36,7 +36,7 @@ public class GUI {
                 if (tfOldBarCode.getText().length() == 0) {
                     return;
                 }
-                tfNameGood.setText(SQL.getGoodsOnBarCode(tfOldBarCode.getText()));
+                tfNameGood.setText(SQL.getGoodsNameOnBarCode(tfOldBarCode.getText()));
             }
         });
         btnChange.addActionListener(new ActionListener() {
