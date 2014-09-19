@@ -2,6 +2,7 @@ package by.mercom.cleanBarCodes;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
+import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
 
@@ -9,8 +10,8 @@ public class SignIn extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JPasswordField passwordField1;
-    private JTextField saTextField;
+    private JPasswordField tfPass;
+    private JTextField tfLogin;
     private JFormattedTextField tfIPAddress;
 
     public SignIn() {
@@ -27,7 +28,7 @@ public class SignIn extends JDialog {
         });
 
 // call onCancel() when cross is clicked
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
@@ -43,20 +44,25 @@ public class SignIn extends JDialog {
     }
 
     private void onOK() {
-// add your code here
+        if (!SQL.testConnection(tfIPAddress.getValue().toString(), tfLogin.getText(), String.valueOf(tfPass.getPassword()))) {
+            Main.sendErrMSG("Невозможно подключиться к БД!");
+            return;
+        }
         dispose();
+        new GUI();
     }
 
     private void onCancel() {
-// add your code here if necessary
         dispose();
+        System.exit(0);
     }
 
     public static void main(String[] args) {
         SignIn dialog = new SignIn();
         dialog.pack();
+        Dimension dm = Toolkit.getDefaultToolkit().getScreenSize();
+        dialog.setLocation((int)(dm.getWidth() - dialog.getWidth()) / 2, (int)(dm.getHeight() - dialog.getHeight()) / 2);
         dialog.setVisible(true);
-        System.exit(0);
     }
 
     private void createUIComponents() {

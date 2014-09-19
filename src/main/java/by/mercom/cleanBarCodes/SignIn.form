@@ -78,7 +78,7 @@
               <text value="Пароль:"/>
             </properties>
           </component>
-          <component id="681b4" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
+          <component id="681b4" class="javax.swing.JPasswordField" binding="tfPass">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -86,7 +86,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="2cb8c" class="javax.swing.JTextField" binding="saTextField" default-binding="true">
+          <component id="2cb8c" class="javax.swing.JTextField" binding="tfLogin">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

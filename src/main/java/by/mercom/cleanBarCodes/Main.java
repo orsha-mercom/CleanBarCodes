@@ -1,8 +1,6 @@
 package by.mercom.cleanBarCodes;
 
 import javax.swing.*;
-import java.util.*;
-import java.util.Properties;
 
 /**
  * Created by dm13y on 9/18/14.
@@ -24,9 +22,12 @@ public class Main {
         } catch (Exception e) {
         }
         //load properties
-        new Properties();
+        new Propert();
         SignIn.main(null);
-        new GUI();
+    }
+
+    public static void sendErrMSG(String msg) {
+        JOptionPane.showMessageDialog(null, msg, "Ошибка!", JOptionPane.ERROR_MESSAGE);
     }
 
 }
